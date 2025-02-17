@@ -1,13 +1,12 @@
 #include <iostream> 
 #include <string>
 #include <vector>
-#include <thread>
 #include <algorithm>
-#include <mutex>
 #include <WinSock2.h>
 #include <Windows.h>
 #include <WS2tcpip.h>
 #include <fstream>
+
 
 int main(int argc, char** argv){
     WSADATA wsaData;
