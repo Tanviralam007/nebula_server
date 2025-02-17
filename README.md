@@ -4,3 +4,6 @@
 - 🔹 lightweight and minimal  
 - ⚡ fast and efficient  
 - 🖥️ runs on windows machine  
+
+## documentation
+[C++](https://devdocs.io/cpp/)
