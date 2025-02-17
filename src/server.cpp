@@ -55,7 +55,7 @@ int main(int argc, char** argv){
         return 1;
     }
 
-    // receive
+    // receive the request
     char request[4096] = {0};
     int byte_received = recv(client, request, 4096, 0);
     if(byte_received == SOCKET_ERROR){
@@ -64,7 +64,7 @@ int main(int argc, char** argv){
         return 1;
     }
 
-    // send
+    // send the response
     if(memcmp(request, "GET / HTTP/1.1", 6) == 0){
         FILE* f = fopen("../views/index.html", "r");
         if(!f){
