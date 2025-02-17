@@ -7,7 +7,6 @@
 #include <WinSock2.h>
 #include <Windows.h>
 #include <WS2tcpip.h>
-#include <filesystem>
 #include <fstream>
 
 int main(int argc, char** argv){
@@ -34,7 +33,7 @@ int main(int argc, char** argv){
 
     // send
     if(memcmp(request, "GET / HTTP/1.1", 6) == 0){
-        FILE* f = fopen("index.html", "r");
+        FILE* f = fopen("../views/index.html", "r");
         char buffer[256] = {0};
         fread(buffer, 1, 256, f);
         send(client, buffer, 256, 0);
