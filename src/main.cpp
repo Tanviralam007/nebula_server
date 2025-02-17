@@ -7,9 +7,11 @@
 #include <WinSock2.h>
 #include <Windows.h>
 #include <WS2tcpip.h>
+#include <filesystem>
+#include <fstream>
 
 int main(int argc, char** argv){
-    WSADATA wsaData;    
+    WSADATA wsaData;
     WSAStartup(MAKEWORD(2, 2), &wsaData);
     SOCKET s = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -31,14 +33,12 @@ int main(int argc, char** argv){
     recv(client, request, 256, 0);
 
     // send
-    // if(memcmp(request, "GET / HTTP/1.1", 15) == 0){
-    //     char response[] = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<html><body><h1>connection established!</h1></body></html>";
-    //     send(client, response, strlen(response), 0);
-    // }
-    // else{
-    //     char response[] = "HTTP/1.1 404 Not Found\r\nContent-Type: text/html\r\n\r\n<html><body><h1>404 Not Found</h1></body></html>";
-    //     send(client, response, strlen(response), 0);
-    // }   
+    if(memcmp(request, "GET / HTTP/1.1", 6) == 0){
+        FILE* f = fopen("index.html", "r");
+        char buffer[256] = {0};
+        fread(buffer, 1, 256, f);
+        send(client, buffer, 256, 0);
+    }
 
     return 0;
 }
