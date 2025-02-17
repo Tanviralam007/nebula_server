@@ -7,3 +7,11 @@
 
 ## documentation
 [documentation on c++](https://devdocs.io/cpp/)
+
+## run server - for windows machine
+MinGW-w64 compiler is required.
+```
+cd src
+g++ server.cpp -o server.exe -lws2_32
+server
+```
