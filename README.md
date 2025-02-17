@@ -12,6 +12,6 @@
 MinGW-w64 compiler is required.
 ```
 cd src
-g++ server.cpp -o server.exe -lws2_32
+g++ server.cpp -o server -lws2_32
 server
 ```
