@@ -6,4 +6,4 @@
 - 🖥️ runs on windows machine  
 
 ## documentation
-[C++](https://devdocs.io/cpp/)
+[documentation on c++](https://devdocs.io/cpp/)
